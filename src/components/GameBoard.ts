@@ -119,6 +119,13 @@ export class Cell {
         this.mergeTile.remove();
         this.mergeTile = null;
     }
+
+    //удаление плитки
+    clear() {
+        if (this.tile == null) return;
+        this.tile.remove();
+        this.tile = null;
+    }
 }
 
 //cоздаст необходимо число клеток

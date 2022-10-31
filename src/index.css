@@ -7,6 +7,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 10px;
 
   height: 100vh;
   margin: 0;
@@ -62,4 +64,20 @@ body {
     transform: scale(0);
     opacity: 0.5;
   }
+}
+
+.reset {
+  margin-top: -5%;
+
+  width: 50px;
+}
+
+.reset:hover {
+  cursor: pointer;
+  /* transform: rotate(45deg); */
+}
+
+.spin {
+  transition: transform .6s ease-in-out;
+  transform: rotate(360deg);
 }

@@ -1,6 +1,9 @@
 import { Cell, GameBoard } from "./components/GameBoard";
 import { WaitAnimationPromise, Tile } from "./components/Tile";
 import "index.css";
+import { Reset as ResetElement } from "./components/Reset";
+
+const resetElement = new ResetElement(reset);
 
 const gameBoardElement = document.createElement("div");
 gameBoardElement.classList.add("game-board");
@@ -98,7 +101,7 @@ function slideTiles(cells: Array<Cell[]>) {
 
                 if (lastValidCell != null) {
                     promises.push(cell.tile.waitForTransition());
-                    
+
                     if (lastValidCell.tile != null) {
                         lastValidCell.mergeTile = cell.tile;
                     } else {
@@ -154,4 +157,13 @@ function canMoveLeft() {
 
 function canMoveRight() {
     return canMove(gameBoard.cellsByRow.map(row => [...row].reverse()));
+}
+
+function reset() {
+    const cells = gameBoard.cells;
+    cells.forEach(cell => {
+        cell.clear();
+    });
+    gameBoard.randomEmptyCell().tile = new Tile(gameBoardElement);
+    gameBoard.randomEmptyCell().tile = new Tile(gameBoardElement);
 }
