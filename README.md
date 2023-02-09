@@ -2,7 +2,7 @@
 Клон известной игры 2048
 
 ## Live:
-- https://vercel.com/simon-skorentsev/2048
+- https://2048-smoky.vercel.app/
 
 ## Используемые технологии:
 - TS
